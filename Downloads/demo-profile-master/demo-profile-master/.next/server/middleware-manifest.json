@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "middleware": {},
+  "functions": {
+    "/og-image.png/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "prerender-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/app/og-image.png/route.js"
+      ],
+      "name": "app/og-image.png/route",
+      "page": "/og-image.png/route",
+      "matchers": [
+        {
+          "regexp": "^/og\\-image\\.png$",
+          "originalSource": "/og-image.png"
+        }
+      ],
+      "wasm": [
+        {
+          "name": "wasm_77d9faebf7af9e421806970ce10a58e9d83116d7",
+          "filePath": "server/edge-chunks/wasm_77d9faebf7af9e421806970ce10a58e9d83116d7.wasm"
+        },
+        {
+          "name": "wasm_ef4866ecae192fd87727067cf2c0c0cf9fb8b020",
+          "filePath": "server/edge-chunks/wasm_ef4866ecae192fd87727067cf2c0c0cf9fb8b020.wasm"
+        }
+      ],
+      "assets": [
+        {
+          "name": "noto-sans-v27-latin-regular.5dda3fca77107598.ttf",
+          "filePath": "server/edge-chunks/asset_noto-sans-v27-latin-regular.5dda3fca77107598.ttf"
+        }
+      ],
+      "environments": {
+        "previewModeId": "d870e0ab3dfaaf6c2a475903dc3b6e83",
+        "previewModeSigningKey": "92da0602fd27082c444167f8b08ed946a41aa7d5408b8d2e319e00e31525c1fc",
+        "previewModeEncryptionKey": "250884eb1e530c1b179c803bd2ed307bcc666efb26b69f2fb239d4bb6571264f"
+      }
+    }
+  },
+  "sortedMiddleware": []
+}
