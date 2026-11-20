@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h3 mb-0">Registrations</h1>
+  <a routerLink="/" class="btn btn-primary">New registration</a>
+</div>
+
+@if (error()) {
+  <div class="alert alert-danger" role="alert">{{ error() }}</div>
+}
+
+@if (loading()) {
+  <p class="text-muted">Loading…</p>
+} @else if (registrations().length === 0) {
+  <p class="text-muted">No registrations yet.</p>
+} @else {
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Date of birth</th>
+          <th scope="col">Attachment</th>
+          <th scope="col">Registered</th>
+          <th scope="col"><span class="visually-hidden">Actions</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (r of registrations(); track r.id) {
+          <tr>
+            <td>{{ r.firstName }} {{ r.lastName }}</td>
+            <td>{{ r.email }}</td>
+            <td class="text-capitalize">{{ r.gender.toLowerCase() }}</td>
+            <td>{{ r.dob | date: 'mediumDate' }}</td>
+            <td>{{ r.attachmentName ?? '—' }}</td>
+            <td>{{ r.createdAt | date: 'short' }}</td>
+            <td class="text-end">
+              <button type="button" class="btn btn-sm btn-outline-danger" (click)="remove(r)">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}
