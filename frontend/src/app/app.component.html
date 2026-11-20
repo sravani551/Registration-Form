@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand bg-body-tertiary border-bottom mb-4">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Registration</a>
+    <div class="navbar-nav">
+      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Register</a>
+      <a class="nav-link" routerLink="/registrations" routerLinkActive="active">Registrations</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container pb-5">
+  <router-outlet />
+</main>
